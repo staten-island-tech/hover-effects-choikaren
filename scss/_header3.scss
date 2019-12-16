@@ -1,0 +1,105 @@
+@import "./_variables.scss";
+
+.header3 {
+  position: relative;
+  background-color: $mainBlue;
+}
+
+.entireBlock {
+    padding: 10%;
+}
+
+.h3photoGrid {
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.imageBlock:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.photoGrid:hover .imageBlock:not(:hover) {
+  transform: scale(.9);
+}
+
+.photoGridText {
+  z-index: 3;
+  position: absolute;
+  font-family: $mainFont;
+  color: $secondaryYellow;
+  font-weight: bold;
+  margin: 5%;
+}
+
+.photoGridText:hover {
+  color: $mainYellow;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.h3column1 {
+  width: 100%;
+  font-size: 3rem;
+}
+
+
+.h3column2 {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.h3images {
+  width: 100%;
+  filter: brightness(0.7);
+  transition: 0.3s;
+
+}
+
+.h3images:hover {
+  filter: brightness(1);
+}
+
+.h3textBlock {
+  display: none;
+  font-family: $mainFont;
+}
+
+#textBlockTitle {
+  color: $mainPink;
+}
+
+@media (min-width: 400px) {
+  
+    .h3textBlock {
+    display: inline-block;
+    color: $mainYellow;
+    margin-left: 3rem;
+    min-width: 10rem;
+    font-size: 1.1rem;
+  }
+
+  .entireBlock {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+  }
+}
+
+@media (min-width: 700px) {
+  .h3textBlock{
+    min-width: 20rem;
+
+  }
+}
+
+@media (min-width: 1000px) {
+    .h3textBlock{
+      min-width: 50rem;
+  
+    }
+  }
