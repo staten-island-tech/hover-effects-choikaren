@@ -1,29 +1,35 @@
-.banner {
+.navigationBar-banner {
   visibility: hidden;
   position: absolute;
 }
 
-.menu {
-  background-color: #ff004c;
+.navigationBar-menu {
+  background-color: #fc7e7e;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   color: #070063;
   position: fixed;
-  right: 4%;
-  width: 25%;
+  margin: 1rem;
+  width: 35%;
   text-align: center;
-  z-index: 5;
+  height: 4rem;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  z-index: 1;
 }
 
-#newButtons {
+.navigationBar-menu:hover {
+  background-color: #ff004c;
+}
+
+#menu {
   background-color: #ffc400;
-  right: 4%;
-  width: 25%;
+  margin: 1rem;
   text-align: center;
-  top: 4rem;
+  width: 35%;
+  top: 4.5rem;
   position: fixed;
-  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,11 +37,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  z-index: 1;
 }
 
-.verticalButtons {
+.menu-dropDown-buttons {
   width: 100%;
   background-color: inherit;
   border: none;
@@ -43,86 +50,109 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   color: #070063;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
   font-size: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   font-style: italic;
 }
 
-.verticalButtons:hover {
+.menu-dropDown-buttons:hover {
   background-color: #ffe600;
 }
 
-.menuBtn {
+.buttons-text {
+  width: 100%;
+  height: 100%;
+}
+
+.buttons-text:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  overflow: hidden;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.menu-button {
   border: none;
   background-color: inherit;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   color: #070063;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  font-size: .8rem;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  font-size: 0.8rem;
 }
 
-.overlay1 {
+#menu-button-text {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5rem;
+}
+
+.menu-dropDown {
   visibility: hidden;
 }
 
-.overlay1:target {
+.menu-dropDown:target {
   visibility: visible;
   opacity: 1;
 }
 
-.popup1 {
+.button-popUp {
   top: 50%;
   left: 50%;
 }
 
-.buttons {
+.banner {
   text-align: center;
-  background-color: #ffc400;
+  background-color: #fc7e7e;
 }
 
-.btn {
+.banner-buttons {
   border: none;
   background-color: inherit;
-  padding: 1rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   cursor: pointer;
   color: #070063;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
-.btn:hover {
+.banner-buttons:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   background: #ffe600;
-  z-index: 3;
+  z-index: 2;
 }
 
-.overlay {
+.popUp-overlay {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
   visibility: hidden;
   opacity: 0;
   z-index: 3;
 }
 
-.overlay:target {
+.popUp-overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
-.popup {
+.popUp-box {
   padding: 15px;
   position: absolute;
   top: 50%;
@@ -132,31 +162,30 @@
   background: #ffe600;
   width: 30%;
   position: relative;
-  -webkit-transition: all 5s ease-in-out;
-  transition: all 5s ease-in-out;
   color: #070063;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  z-index: 3;
 }
 
-.popup h2 {
+.popUp-box h2 {
   margin-top: 0;
   background: #ffe600;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.popup .close {
+.popUp-box .popUp-box-closeSymbol {
   position: absolute;
   top: 5px;
   right: 10px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
 }
 
-.close:hover {
+.popUp-box-closeSymbol:hover {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
@@ -166,45 +195,45 @@
 }
 
 @media (min-width: 400px) {
-  .top {
-    width: 100%;
-  }
-  .banner {
+  .navigationBar-banner {
     visibility: visible;
     position: fixed;
     width: 100%;
+    z-index: 2;
+  }
+  .banner {
+    margin: 1rem;
     overflow: hidden;
   }
-  .menu {
+  .navigationBar-menu {
     visibility: hidden;
   }
   #newButtons {
     visibility: hidden;
   }
-  .verticalButtons {
+  .menu-dropDown-buttons {
     visibility: hidden;
   }
 }
 
 @media (min-width: 700px) {
-  .popup .close {
+  .popUp-box .popUp-box-closeSymbol {
     top: 15px;
     right: 20px;
   }
-  .btn {
+  .banner-buttons {
     padding: 1rem 3rem;
     font-size: 2rem;
   }
 }
 
-.header1 {
-  z-index: -2;
-  height: 35vh;
+.header {
+  height: 100vh;
   background-color: #ffe600;
   position: relative;
 }
 
-.header1-text {
+.header-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -223,76 +252,82 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-#flower {
-  width: 13rem;
+#header-image {
+  width: 20rem;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: -2;
+  z-index: -1;
 }
 
-#title {
+.header-text-title {
   letter-spacing: 2rem;
-  font-size: 2rem;
   text-transform: uppercase;
+  z-index: 1;
 }
 
-h2 {
+#header-text-subtitle {
   font-size: 1.5rem;
 }
 
-@media (min-width: 400px) {
-  .header1 {
-    height: 50vh;
+@media (min-width: 700px) {
+  #header-image {
+    width: 25rem;
   }
-  #title {
-    font-size: 3rem;
-    letter-spacing: 3rem;
+}
+
+@media (min-width: 400px) {
+  .header-text-title {
+    font-size: 4rem;
+    letter-spacing: 4rem;
+  }
+  #header-text-subtitle {
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 1000px) {
-  .header1 {
-    height: 70vh;
+  #header-image {
+    width: 40rem;
   }
-  #flower {
-    width: 30rem;
-  }
-  #title {
+  .header-text-title {
     font-size: 5rem;
     letter-spacing: 5rem;
   }
-  h2 {
+  #header-text-subtitle {
     font-size: 3rem;
   }
 }
 
 .header2 {
   position: relative;
-  z-index: -2;
-  height: 20rem;
+  height: 100vh;
 }
 
 .slideshowtext {
   position: absolute;
   width: 100%;
   text-align: right;
-  -webkit-transform: translate(-10%);
-          transform: translate(-10%);
-  top: 20%;
+  top: 40%;
   color: #ffe600;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .welcome {
   font-size: 4rem;
+  margin-right: 15%;
 }
 
 .period7 {
+  margin-right: 15%;
+  margin-top: 4%;
   font-size: 1.5rem;
   font-style: italic;
   color: #ffc400;
@@ -313,10 +348,13 @@ h2 {
           animation: slideshow 30s infinite;
   opacity: 0;
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @-webkit-keyframes slideshow {
-  15% {
+  10% {
     opacity: 1;
   }
   90% {
@@ -325,7 +363,7 @@ h2 {
 }
 
 @keyframes slideshow {
-  15% {
+  10% {
     opacity: 1;
   }
   90% {
@@ -364,44 +402,35 @@ h2 {
 }
 
 @media (min-width: 400px) {
-  .header2 {
-    height: 35vh;
-  }
   .welcome {
     font-size: 5rem;
+    margin-right: 6rem;
   }
   .period7 {
     font-size: 2rem;
-  }
-}
-
-@media (min-width: 550px) {
-  .header2 {
-    height: 50vh;
+    margin-right: 6rem;
   }
 }
 
 @media (min-width: 700px) {
-  .header2 {
-    height: 65vh;
-  }
   .welcome {
     font-size: 7rem;
+    margin-right: 10rem;
   }
   .period7 {
     font-size: 3rem;
+    margin-right: 10rem;
   }
 }
 
 @media (min-width: 1000px) {
-  .header2 {
-    height: 100vh;
-  }
   .welcome {
     font-size: 12rem;
+    margin-right: 13rem;
   }
   .period7 {
     font-size: 6rem;
+    margin-right: 13rem;
   }
   .place {
     font-size: 4rem;
@@ -411,17 +440,23 @@ h2 {
   }
 }
 
-.header3 {
+#header3 {
   position: relative;
   background-color: #070063;
-  z-index: -2;
 }
 
-.entireBlock {
+.header3 {
   padding: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.h3photoGrid {
+.header3-photoGrid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -429,23 +464,11 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: auto;
 }
 
-.imageBlock:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  z-index: 5;
-}
-
-.photoGrid:hover .imageBlock:not(:hover) {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-}
-
-.photoGridText {
-  z-index: 3;
+.imageBlock-text {
+  z-index: 1;
   position: absolute;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #ffc400;
@@ -453,20 +476,12 @@ h2 {
   margin: 5%;
 }
 
-.photoGridText:hover {
-  color: #ffe600;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.h3column1 {
+.photoGrid-column1 {
   width: 100%;
   font-size: 3rem;
 }
 
-.h3column2 {
+.photoGrid-column2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -477,7 +492,7 @@ h2 {
   width: 60%;
 }
 
-.h3images {
+.imageBlock-image {
   width: 100%;
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
@@ -485,49 +500,135 @@ h2 {
   transition: 0.3s;
 }
 
-.h3images:hover {
+.imageBlock-image:hover {
   -webkit-filter: brightness(1);
           filter: brightness(1);
 }
 
-.h3textBlock {
-  display: none;
+.header3-textBlock {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: inline-block;
+  color: #ffe600;
+  width: 100%;
 }
 
-#textBlockTitle {
+#textBlock-body {
+  display: none;
+}
+
+#textBlock-title {
   color: #ff004c;
+  font-size: 4rem;
+  margin-top: 1.5rem;
+  text-align: right;
 }
 
-@media (min-width: 400px) {
-  .h3textBlock {
-    display: inline-block;
-    color: #ffe600;
-    margin-left: 3rem;
-    min-width: 10rem;
-    font-size: 1.1rem;
-  }
-  .entireBlock {
+.textBlock-button-learnMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fc7e7e;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  float: right;
+  background: none;
+  border: none;
+}
+
+.textBlock-button-learnMore:hover {
+  color: #ff004c;
+  -webkit-transition: ease-in 0.1s;
+  transition: ease-in 0.1s;
+}
+
+.textBlock-button-learnMore:hover #learnMore-P2 {
+  display: inline-block;
+}
+
+#textBlock-notVisibleBody {
+  display: none;
+}
+
+.textBlock-button:target #textBlock-notVisibleBody {
+  display: inline-block;
+}
+
+#learnMore-P2 {
+  margin-left: 1rem;
+  display: none;
+}
+
+@media (min-width: 550px) {
+  .header3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding: 5%;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .header3-textBlock {
+    display: inline-block;
+    color: #ffe600;
+    margin: auto;
+    margin-right: 8%;
+    min-width: 17rem;
+    max-width: 20rem;
+  }
+  #textBlock-title {
+    font-size: 3rem;
+    text-align: right;
+    vertical-align: center;
+    margin-bottom: 1rem;
+  }
+  #textBlock-body {
+    display: inline-block;
+    text-align: right;
+    font-size: 1.5rem;
+  }
+  .h3photoGrid {
+    min-width: 30rem;
   }
 }
 
 @media (min-width: 700px) {
-  .h3textBlock {
-    min-width: 20rem;
+  .header3-textBlock {
+    min-width: 30rem;
+    max-width: 40rem;
+  }
+  #textBlock-title {
+    font-size: 4rem;
+  }
+  #textBlock-body {
+    font-size: 1.7rem;
+  }
+  .h3photoGrid {
+    min-width: 40rem;
   }
 }
 
 @media (min-width: 1000px) {
-  .h3textBlock {
-    min-width: 50rem;
+  .entireBlock {
+    padding: 6%;
+  }
+  .header3-textBlock {
+    min-width: 20rem;
+    max-width: 30rem;
+  }
+  #textBlock-title {
+    font-size: 4.5rem;
+  }
+  #textBlock-body {
+    font-size: 2rem;
   }
 }
 
@@ -536,7 +637,6 @@ h2 {
   position: relative;
   text-align: center;
   padding: 3rem;
-  z-index: -2;
 }
 
 .textinrow {
@@ -553,7 +653,7 @@ h2 {
 .description {
   font-size: 1.5rem;
   color: #ffe600;
-  margin-bottom: 2rem;
+  margin: auto;
 }
 
 .image {
@@ -561,6 +661,12 @@ h2 {
   width: 90%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 400px) {
+  .image {
+    min-width: 17rem;
+  }
 }
 
 @media (min-width: 700px) {
@@ -572,7 +678,6 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 3rem;
   }
   .imagerow {
     display: -webkit-box;
@@ -582,24 +687,33 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin: 2rem;
   }
   .image {
-    width: 40%;
+    min-width: 30rem;
   }
   .textinrow {
     text-align: left;
     margin-left: 3rem;
-    margin-right: 3rem;
   }
 }
 
 @media (min-width: 1000px) {
   .description {
-    font-size: rem;
+    font-size: 2.5rem;
+  }
+  .place {
+    font-size: 5rem;
+    margin-bottom: 1rem;
   }
   .image {
-    width: 70%;
+    min-width: 40%;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -608,5 +722,6 @@ html {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
