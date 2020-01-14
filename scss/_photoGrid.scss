@@ -1,12 +1,14 @@
 @import "./_variables.scss";
 
 #header3 {
+
   position: relative;
   background-color: $mainBlue;
 }
 
 .header3 {
-  padding: 10%;
+  padding: 7%;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +17,7 @@
   display: flex;
   flex-direction: row;
   margin: auto;
+  // max-width: 40%;
 }
 
 .imageBlock-text {
@@ -30,6 +33,7 @@
   width: 100%;
   font-size: 3rem;
 }
+
 
 .photoGrid-column2 {
   display: flex;
@@ -99,7 +103,7 @@ transition: ease-in 0.1s;
   display: none;
 }
 
-.textBlock-button:target #textBlock-notVisibleBody {
+.textBlock-button:active #textBlock-notVisibleBody {
 display: inline-block;
 }
 
@@ -119,6 +123,7 @@ display: inline-block;
   .header3 {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-evenly;
   }
   
 
@@ -144,8 +149,8 @@ display: inline-block;
     font-size: 1.5rem;
   }
 
-  .h3photoGrid {
-    min-width: 30rem;
+  .header3-photoGrid {
+    min-width: 25rem;
   }
 
 }
@@ -164,16 +169,20 @@ display: inline-block;
     font-size: 1.7rem;
   }
 
-  .h3photoGrid {
-    min-width: 40rem;
+  .header3-photoGrid {
+    min-width: 30rem;
   }
   
 }
 
 @media (min-width: 1000px) {
-  .entireBlock {
-    padding: 6%;
-  }
+  // #header3 {
+  //   height: 100vh;
+  // }
+  
+  // .entireBlock {
+  //   padding: 5%;
+  // }
   
   .header3-textBlock {
     min-width: 20rem;
@@ -188,5 +197,8 @@ display: inline-block;
     font-size: 2rem;
   }
 
+  .header3-photoGrid {
+    max-width: 65rem;
+  }
 
 }

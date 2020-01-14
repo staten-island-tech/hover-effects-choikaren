@@ -49,12 +49,6 @@
 //   }
 // }
 
-@media (min-width: 700px) {
-
-#header-image {
-  width: 25rem;
-}
-}
 @media (min-width: 400px) {
   .header-text-title {
     font-size: 4rem;
@@ -64,8 +58,15 @@
   #header-text-subtitle {
     font-size: 2rem;
   }
-
 }
+
+@media (min-width: 700px) {
+
+#header-image {
+  width: 25rem;
+}
+}
+
 @media (min-width: 1000px) {
   // .header {
   //   height: 75vh;
